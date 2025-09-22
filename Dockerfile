@@ -7,7 +7,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /out/app .
 
 # runtime (distroless = klein en veilig)
-FROM gcr.io/distroless/base-debian12
+FROM gcr.io/distroless/base-debian13
 ENV PORT=8080
 EXPOSE 8080
 COPY --from=build /out/app /app
