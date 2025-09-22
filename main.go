@@ -23,7 +23,7 @@ func main() {
 		fmt.Fprintf(w, "Huidige server tijd: %s\n", currentTime)
 	})
 
-	// Luisterpoort via env (handig voor Docker/K8s)
+	// Lees poort uit omgevingsvariabele, standaard naar 8080
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
