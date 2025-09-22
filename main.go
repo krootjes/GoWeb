@@ -11,7 +11,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Dit is een Go webserver. Hallo vanuit Go! 👋")
+		fmt.Fprintln(w, "Dit is een Go webserver. Hallo vanuit Go!")
 	})
 	mux.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
