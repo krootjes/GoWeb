@@ -23,6 +23,6 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	log.Printf("listening on :%s …", port)
+	log.Printf("Luisteren op: %s in de container…", port)
 	log.Fatal(http.ListenAndServe(":"+port, mux))
 }
