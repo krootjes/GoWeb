@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 func main() {
@@ -16,6 +17,10 @@ func main() {
 	mux.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("ok"))
+	})
+	mux.HandleFunc("/time", func(w http.ResponseWriter, r *http.Request) {
+		currentTime := time.Now().Format(time.RFC1123)
+		fmt.Fprintf(w, "Huidige server tijd: %s\n", currentTime)
 	})
 
 	// Luisterpoort via env (handig voor Docker/K8s)
